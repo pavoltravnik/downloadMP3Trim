@@ -21,3 +21,11 @@ done
 
 
 For example, `ffmpeg -ss 30 -t 70 -i inputfile.mp3 -acodec copy outputfile.mp3` should do the trick for the range (30s-100s).
+
+
+To merge all audio files to one.
+
+```bash
+cd processed;
+ffmpeg -i "concat:$(ls | sort -V | tr '\n' '|' | sed 's/.$//')" -acodec copy output.mp3
+```
