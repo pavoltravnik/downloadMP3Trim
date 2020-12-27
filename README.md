@@ -15,6 +15,7 @@ do
 	FILE="$(ls)";
 	ffmpeg -ss 11 -i "$FILE" -acodec copy "$i. $FILE";
 	mv "$i. $FILE" "$PATH_TO_ROOT/processed/$i. $FILE";
+	rm $FILE;
 done
 ```
 
